@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Editor</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .code-editor {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .output {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow: scroll;
+    }
+
+    .tabs {
+      margin-bottom: 10px;
+    }
+
+    .tab {
+      display: inline-block;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background-color: #ccc;
+    }
+
+    .buttons {
+      text-align: right;
+    }
+
+    .button {
+      margin-left: 10px;
+    }
+
+    .code-editor {
+        font-family: monospace;
+        font-size: 16px;
+        tab-size: 4;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Code Editor</h1>
+
+    <div class="tabs">
+      <a href="#" class="tab active">Python</a>
+      <a href="#" class="tab">JavaScript</a>
+      <a href="#" class="tab">C++</a>
+      <a href="#" class="tab">Java</a>
+      <a href="#" class="tab">C#</a>
+    </div>
+
+    <div class="code-editor">
+      # Python code
+      print("Hello, world!")
+    </div>
+
+    <div class="output">
+      # Output
+      Hello, world!
+    </div>
+
+    <div class="buttons">
+      <button class="button">Run</button>
+      <button class="button">Copy</button>
+    </div>
+  </div>
+
+  <script>
+    // Switch between tabs
+    document.querySelectorAll(".tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach(tab => {
+          tab.classList.remove("active");
+        });
+
+        tab.classList.add("active");
+
+        // Change the code editor language
+        // ...
+      });
+    });
+
+    // Run the code
+    document.querySelector(".button.run").addEventListener("click", () => {
+      // Get the code from the code editor
+      // ...
+
+      // Run the code
+      // ...
+    });
+
+    // Copy the code
+    document.querySelector(".button.copy").addEventListener("click", () => {
+      // Get the code from the code editor
+      // ...
+
+      // Copy the code to the clipboard
+      // ...
+    });
+    // Create a new CodeMirror editor
+    var editor = CodeMirror.fromTextArea(document.querySelector(".code-editor"), {
+    mode: "python", // Set the language mode
+    theme: "material", // Set the theme
+    });
+
+  </script>
+</body>
+</html>
