@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Editor</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .code-editor {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .output {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow: scroll;
+    }
+
+    .tabs {
+      margin-bottom: 10px;
+    }
+
+    .tab {
+      display: inline-block;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background-color: #ccc;
+    }
+
+    .buttons {
+      text-align: right;
+    }
+
+    .button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Code Editor</h1>
+
+    <div class="tabs">
+      <a href="#" class="tab active">Python</a>
+      <a href="#" class="tab">JavaScript</a>
+      <a href="#" class="tab">C++</a>
+      <a href="#" class="tab">Java</a>
+      <a href="#" class="tab">C#</a>
+    </div>
+
+    <textarea id="code-input" class="code-editor"></textarea>
+    <button id="run-button" class="button">Run</button>
+
+    <div class="output">
+      # Output
+      ...
+    </div>
+
+    <script>
+      // Get the code from the code input
+      document.querySelector("#run-button").addEventListener("click", () => {
+        const code = document.querySelector("#code-input").value;
+
+        // Run the code
+        // ...
+
+        // Display the output in the output div
+        const outputDiv = document.querySelector(".output");
+        outputDiv.innerHTML = "";
+
+        // ...
+      });
+    </script>
+  </div>
+</body>
+</html>
