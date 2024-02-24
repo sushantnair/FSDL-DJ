@@ -1,0 +1,31 @@
+/* Reset the default margin that most browsers apply to the <body> element.
+   The default margin can create unwanted spacing between the edges of the page
+   and the content within the <body>. Setting margin: 0; removes this default margin,
+   effectively making the content start right at the edge of the viewport. This practice
+   ensures consistent and predictable spacing and layout across different browsers and devices. */
+   
+   body {
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    min-height: 100vh; /* Ensure the container takes up at least the full viewport height */
+    background-color: #f0f0f0;
+}
+
+.center-container {
+    width: 100%; /* Span from left to right */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    border: 20px solid #333;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.buttons-container {
+    /* Additional styles for horizontal button alignment */
+    flex-direction: row; /* Align buttons horizontally */
+}
+
+.centered-text {
+    text-align: center;
+}
