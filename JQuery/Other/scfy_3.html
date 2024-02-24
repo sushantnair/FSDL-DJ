@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Code Editor</title>
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .code-editor {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .output {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      overflow: scroll;
+    }
+
+    .tabs {
+      margin-bottom: 10px;
+    }
+
+    .tab {
+      display: inline-block;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .tab.active {
+      background-color: #ccc;
+    }
+
+    .buttons {
+      text-align: right;
+    }
+
+    .button {
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Code Editor</h1>
+
+    <div class="tabs">
+      <a href="#" class="tab active" data-lang="python">Python</a>
+      <a href="#" class="tab" data-lang="javascript">JavaScript</a>
+      <a href="#" class="tab" data-lang="cpp">C++</a>
+      <a href="#" class="tab" data-lang="java">Java</a>
+      <a href="#" class="tab" data-lang="csharp">C#</a>
+    </div>
+
+    <textarea id="code-input" class="code-editor"></textarea>
+    <button id="run-button" class="button">Run</button>
+
+    <div class="output">
+      # Output
+      ...
+    </div>
+
+    <script>
+      document.querySelector("#run-button").addEventListener("click", () => {
+        const code = document.querySelector("#code-input").value;
+        const selectedLanguage = document.querySelector(".tab.active").getAttribute("data-lang");
+        const outputDiv = document.querySelector(".output");
+        
+        // Clear the previous output
+        outputDiv.innerHTML = "";
+
+        // Execute code based on the selected language
+        try {
+          switch (selectedLanguage) {
+            case "python":
+              // Execute Python code
+              // You'll need a Python execution environment on your server or use a service like an API.
+              // Example:
+              // Call an API with the code and get the Python output.
+              // const pythonOutput = executePythonCode(code);
+              // outputDiv.textContent = pythonOutput;
+              break;
+            case "javascript":
+              // Execute JavaScript code
+              eval(code);
+              break;
+            case "cpp":
+              // Execute C++ code
+              // Similar to Python, you'll need a C++ execution environment on your server or use an API.
+              // Example:
+              // Call an API with the code and get the C++ output.
+              // const cppOutput = executeCppCode(code);
+              // outputDiv.textContent = cppOutput;
+              break;
+            case "java":
+              // Execute Java code
+              // Similar to Python and C++, you'll need a Java execution environment on your server or use an API.
+              // Example:
+              // Call an API with the code and get the Java output.
+              // const javaOutput = executeJavaCode(code);
+              // outputDiv.textContent = javaOutput;
+              break;
+            case "csharp":
+              // Execute C# code
+              // Similar to other languages, you'll need a C# execution environment on your server or use an API.
+              // Example:
+              // Call an API with the code and get the C# output.
+              // const csharpOutput = executeCSharpCode(code);
+              // outputDiv.textContent = csharpOutput;
+              break;
+          }
+        } catch (error) {
+          // Handle and display errors
+          outputDiv.textContent = "Error: " + error.message;
+        }
+      });
+    </script>
+  </div>
+</body>
+</html>
